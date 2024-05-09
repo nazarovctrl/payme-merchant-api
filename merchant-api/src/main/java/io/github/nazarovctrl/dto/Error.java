@@ -1,6 +1,5 @@
 package io.github.nazarovctrl.dto;
 
-
 public class Error {
     private Integer code;
     private String message;
