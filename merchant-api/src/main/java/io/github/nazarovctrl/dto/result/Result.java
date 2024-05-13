@@ -1,8 +1,11 @@
-package io.github.nazarovctrl.dto;
+package io.github.nazarovctrl.dto.result;
 
 public class Result {
     private Object result;
     private Error error;
+
+    public Result() {
+    }
 
     public Result(Error error) {
         this.error = error;
@@ -22,9 +25,5 @@ public class Result {
 
     public void setError(Error error) {
         this.error = error;
-    }
-
-    public static Result unauthorized() {
-        return new Result(new Error(-32504, "Unauthorized", "authorization"));
     }
 }

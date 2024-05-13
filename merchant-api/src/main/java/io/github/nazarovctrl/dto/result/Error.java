@@ -1,4 +1,4 @@
-package io.github.nazarovctrl.dto;
+package io.github.nazarovctrl.dto.result;
 
 public class Error {
     private Integer code;
