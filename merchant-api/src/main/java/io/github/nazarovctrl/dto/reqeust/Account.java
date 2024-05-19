@@ -1,9 +1,9 @@
 package io.github.nazarovctrl.dto.reqeust;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Account {
-    @SerializedName("order_id")
+    @JsonProperty("order_id")
     private Long orderId;
 
     public Long getOrderId() {

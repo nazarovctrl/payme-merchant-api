@@ -8,10 +8,10 @@ import java.util.Base64;
 
 @Component
 public class AuthUtil {
-    @Value("${paycom.user.name}")
+    @Value("${payme.user.name}")
     private String username;
 
-    @Value("${paycom.user.password}")
+    @Value("${payme.user.password}")
     private String password;
 
     public boolean isUnauthorized(String authHeader) {

@@ -1,10 +1,10 @@
 package io.github.nazarovctrl.dto.result;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CancelTransactionResult {
     private String transaction;
-    @SerializedName("cancel_time")
+    @JsonProperty("cancel_time")
     private long cancelTime;
     private Integer state;
 

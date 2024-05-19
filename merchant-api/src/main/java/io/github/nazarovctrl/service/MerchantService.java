@@ -12,10 +12,10 @@ public class MerchantService {
 
     public Result handle(RequestForm requestForm) {
         try {
-            if (requestForm.isValid()) {
+            if (!requestForm.isValid()) {
                 throw new RequiredFieldMissing();
             }
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             throw new CantParseJson();
         }
         return control(requestForm);

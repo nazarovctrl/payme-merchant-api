@@ -1,6 +1,6 @@
 package io.github.nazarovctrl.dto.result;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.nazarovctrl.dto.reqeust.Account;
 
 public class GetStatementResult {
@@ -8,11 +8,11 @@ public class GetStatementResult {
     private long time;
     private Long amount;
     private Account account;
-    @SerializedName("create_time")
+    @JsonProperty("create_time")
     private long createTime;
-    @SerializedName("perform_time")
+    @JsonProperty("perform_time")
     private long performTime;
-    @SerializedName("cancel_time")
+    @JsonProperty("cancel_time")
     private long cancelTime;
     private String transaction;
     private Integer state;

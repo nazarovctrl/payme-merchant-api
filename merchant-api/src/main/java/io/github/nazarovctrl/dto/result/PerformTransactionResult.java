@@ -1,10 +1,10 @@
 package io.github.nazarovctrl.dto.result;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PerformTransactionResult {
     private String transaction;
-    @SerializedName("perform_time")
+    @JsonProperty("perform_time")
     private Long performTime;
     private Integer state;
 

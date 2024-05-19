@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/${payme.merchant-api.path}")
+@RequestMapping("${payme.merchant-api.path}")
 public class MerchantController {
 
     private final MerchantService merchantService;

@@ -1,16 +1,15 @@
 package io.github.nazarovctrl.dto.result;
 
-
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Item {
     private String code;
     private String title;
     private long price;
     private int count;
-    @SerializedName("package_code")
+    @JsonProperty("package_code")
     private String packageCode;
-    @SerializedName("vat_percent")
+    @JsonProperty("vat_percent")
     private int vatPercent;
 
     public Item(String code, String title, long price, int count, String packageCode, int vatPercent) {

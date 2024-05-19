@@ -15,10 +15,5 @@
     <description>To simplify Payme Merchant API integration</description>
 
     <dependencies>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.10.1</version>
-        </dependency>
     </dependencies>
 </project>
