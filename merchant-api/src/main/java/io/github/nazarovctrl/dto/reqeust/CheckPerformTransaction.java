@@ -5,8 +5,12 @@ public class CheckPerformTransaction {
     private Account account;
 
     public CheckPerformTransaction(Params params) {
-        this.amount = params.getAmount();
-        this.account = params.getAccount();
+        this(params.getAmount(), params.getAccount());
+    }
+
+    public CheckPerformTransaction(Long amount, Account account) {
+        this.amount = amount;
+        this.account = account;
     }
 
     public static boolean isValid(Params params) {

@@ -13,13 +13,11 @@ public class CheckTransactionResult {
     private Integer state;
     private Integer reason;
 
-    public CheckTransactionResult(long createTime, long performTime, long cancelTime, String transaction, Integer state, Integer reason) {
+    public CheckTransactionResult(long createTime, long performTime, long cancelTime, String transaction) {
         this.createTime = createTime;
         this.performTime = performTime;
         this.cancelTime = cancelTime;
         this.transaction = transaction;
-        this.state = state;
-        this.reason = reason;
     }
 
     public long getCreateTime() {
@@ -44,5 +42,13 @@ public class CheckTransactionResult {
 
     public Integer getReason() {
         return reason;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
+    public void setReason(Integer reason) {
+        this.reason = reason;
     }
 }
