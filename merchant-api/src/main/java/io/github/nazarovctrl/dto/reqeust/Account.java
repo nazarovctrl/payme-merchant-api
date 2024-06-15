@@ -1,12 +1,13 @@
 package io.github.nazarovctrl.dto.reqeust;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Account {
-    @JsonProperty("order_id")
     private Long orderId;
 
-    public Account(Long orderId) {
+    @JsonCreator
+    public Account(@JsonProperty("order_id") Long orderId) {
         this.orderId = orderId;
     }
 
