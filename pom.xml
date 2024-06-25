@@ -15,7 +15,7 @@
     <version>1</version>
 
     <modules>
-        <module>merchant-api</module>
+        <module>payme-merchant-api</module>
     </modules>
 
     <licenses>
