@@ -69,7 +69,7 @@ public class MerchantRepository implements IMerchantRepository {
     }
 
     @Override
-    public List<Transaction> getAllTransactionsByPaycomTimeBetween(long from, long to) {
+    public List<Transaction> getAllTransactionsByPaymeTimeBetween(long from, long to) {
         return null;
     }
 }
