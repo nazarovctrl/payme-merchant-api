@@ -24,7 +24,7 @@ public class AuthUtil {
 
     /***
      * @param authHeader Base64 encoded basic authorization header
-     * @return returns true if the authorization is valid otherwise false
+     * @return true if the authorization is valid otherwise false
      */
     public boolean isUnauthorized(String authHeader) {
         final String basic = "Basic ";

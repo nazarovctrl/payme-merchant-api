@@ -9,9 +9,9 @@ import io.github.nazarovctrl.enums.Method;
 import io.github.nazarovctrl.enums.OrderCancelReason;
 import io.github.nazarovctrl.enums.TransactionState;
 import io.github.nazarovctrl.exp.*;
-
 import io.github.nazarovctrl.mapper.MerchantMapper;
 import io.github.nazarovctrl.repository.MerchantRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,6 +19,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/***
+ * Class for processing RPC requests
+ *
+ * @author Azimjon Nazarov
+ */
 @Service
 public class MerchantService {
     private static final Long time_expired = 43_200_000L;
@@ -198,7 +203,7 @@ public class MerchantService {
     }
 
     private Transactions getStatement(GetStatement getStatement) {
-        List<Transaction> transactions = merchantRepository.getAllTransactionsByPaycomTimeBetween(getStatement.getFrom(), getStatement.getTo());
+        List<Transaction> transactions = merchantRepository.getAllTransactionsByPaymeTimeBetween(getStatement.getFrom(), getStatement.getTo());
         if (transactions == null || transactions.isEmpty()) {
             return new Transactions(new ArrayList<>());
         }
