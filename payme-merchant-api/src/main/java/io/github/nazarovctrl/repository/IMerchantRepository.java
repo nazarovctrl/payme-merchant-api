@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Azimjon Nazarov
  */
-public interface MerchantRepository {
+public interface IMerchantRepository {
     /***
      * @param orderId Order ID
      * @return order whose orderId is equal to the orderId in the method param
