@@ -6,6 +6,9 @@ import io.github.nazarovctrl.dto.result.CheckTransactionResult;
 import io.github.nazarovctrl.dto.result.CreateTransactionResult;
 import io.github.nazarovctrl.dto.result.GetStatementResult;
 
+/***
+ * Class for mapping request Oo jects
+ */
 public class MerchantMapper {
     public static CreateTransactionResult getCreateTransactionResult(Transaction transaction) {
         return new CreateTransactionResult(transaction.getCreateTime(), transaction.getId(),

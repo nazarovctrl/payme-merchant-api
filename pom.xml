@@ -12,7 +12,7 @@
     <groupId>io.github.nazarovctrl</groupId>
     <artifactId>payme</artifactId>
     <packaging>pom</packaging>
-    <version>1</version>
+    <version>1-alpha</version>
 
     <modules>
         <module>payme-merchant-api</module>
