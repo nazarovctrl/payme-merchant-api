@@ -10,7 +10,7 @@ import io.github.nazarovctrl.enums.OrderCancelReason;
 import io.github.nazarovctrl.enums.TransactionState;
 import io.github.nazarovctrl.exp.*;
 import io.github.nazarovctrl.mapper.MerchantMapper;
-import io.github.nazarovctrl.repository.MerchantRepository;
+import io.github.nazarovctrl.repository.IMerchantRepository;
 
 import org.springframework.stereotype.Service;
 
@@ -28,10 +28,10 @@ import java.util.stream.Collectors;
 public class MerchantService {
     private static final Long time_expired = 43_200_000L;
     private final BillingDetail billingDetail;
-    private final MerchantRepository merchantRepository;
+    private final IMerchantRepository merchantRepository;
     private final PaymentService paymentService;
 
-    public MerchantService(BillingDetail billingDetail, MerchantRepository merchantRepository, PaymentService paymentService) {
+    public MerchantService(BillingDetail billingDetail, IMerchantRepository merchantRepository, PaymentService paymentService) {
         this.billingDetail = billingDetail;
         this.merchantRepository = merchantRepository;
         this.paymentService = paymentService;
