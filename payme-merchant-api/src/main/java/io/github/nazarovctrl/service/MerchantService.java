@@ -29,9 +29,9 @@ public class MerchantService {
     private static final Long time_expired = 43_200_000L;
     private final BillingDetail billingDetail;
     private final IMerchantRepository merchantRepository;
-    private final PaymentService paymentService;
+    private final IPaymentService paymentService;
 
-    public MerchantService(BillingDetail billingDetail, IMerchantRepository merchantRepository, PaymentService paymentService) {
+    public MerchantService(BillingDetail billingDetail, IMerchantRepository merchantRepository, IPaymentService paymentService) {
         this.billingDetail = billingDetail;
         this.merchantRepository = merchantRepository;
         this.paymentService = paymentService;
