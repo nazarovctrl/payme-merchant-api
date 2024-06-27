@@ -6,7 +6,7 @@ package io.github.nazarovctrl.service;
  *
  * @author Azimjon Nazarov
  */
-public interface PaymentService {
+public interface IPaymentService {
     /***
      * Method for receive payment
      * You should write logic, such as what to do after successful payment
