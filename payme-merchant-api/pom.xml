@@ -4,7 +4,7 @@
     <parent>
         <groupId>io.github.nazarovctrl</groupId>
         <artifactId>payme</artifactId>
-        <version>1-alpha</version>
+        <version>1.0.1-alpha</version>
     </parent>
 
     <artifactId>payme-merchant-api</artifactId>
