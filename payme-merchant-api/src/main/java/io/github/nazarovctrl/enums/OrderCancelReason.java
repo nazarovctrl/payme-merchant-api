@@ -1,11 +1,32 @@
 package io.github.nazarovctrl.enums;
 
+/***
+ * Причина отмены транзакции (Reason)
+ */
 public enum OrderCancelReason {
+    /***
+     * Один или несколько получателей не найдены или неактивны в Payme Business
+     */
     RECEIVER_NOT_FOUND(1),
+    /***
+     * Ошибка при выполнении дебетовой операции в процессинговом центре
+     */
     DEBIT_OPERATION_ERROR(2),
+    /***
+     * Ошибка выполнения транзакции
+     */
     TRANSACTION_ERROR(3),
+    /***
+     * Транзакция отменена по таймауту
+     */
     TRANSACTION_TIMEOUT(4),
+    /***
+     * Возврат денег
+     */
     MONEY_BACK(5),
+    /***
+     * Неизвестная ошибка
+     */
     UNKNOWN_ERROR(10);
     private final int code;
 

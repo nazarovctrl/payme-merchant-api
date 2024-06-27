@@ -3,15 +3,37 @@ package io.github.nazarovctrl.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-
+/***
+ * The class for initializing Payme billing details into variables
+ *
+ * @author Azimjon Nazarov
+ ***/
 @Configuration
 @ConfigurationProperties(prefix = "payme.billing.detail")
 public class BillingDetail {
+    /***
+     * Продажа/Возврат = 0 (required)
+     */
     private Integer receiptType;
+    /***
+     * ИКПУ (идентификационный код продукции и услуг) (required)
+     */
     private String code;
+    /***
+     * Название продуктa (required)
+     */
     private String title;
+    /***
+     * Количество товаров или услуг	(required, minimum = 1)
+     */
     private int count = 1;
+    /***
+     * Код упаковки продукта (required)
+     */
     private String packageCode;
+    /***
+     * Процент уплачиваемого НДС для данного товара	(required)
+     */
     private Integer vatPercent;
 
     public Integer getReceiptType() {
