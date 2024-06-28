@@ -12,7 +12,7 @@
 </dependency>
 ```
 ## Usage
-#### [https://github.com/nazarovctrl/payme-merchant-api/how-to-use](https://github.com/nazarovctrl/payme-merchant-api/HOW2USE.md#how-to-use-library) (how to use library)
+#### [https://github.com/nazarovctrl/payme-merchant-api/how-to-use](https://github.com/nazarovctrl/payme-merchant-api/blob/master/HOW2USE.md#how-to-use-library) (how to use library)
 
 ## Examples
 #### [https://github.com/nazarovctrl/payme-merchant-api/EXAMPLES.md](https://github.com/nazarovctrl/payme-merchant-api/blob/master/EXAMPLES.md)
