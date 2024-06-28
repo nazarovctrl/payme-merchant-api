@@ -17,20 +17,20 @@
     <groupId>io.github.nazarovctrl</groupId>
     <artifactId>payme-merchant-api</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1-beta</version>
+    <version>1.0.2-beta</version>
     <name>Payme Merchant API</name>
     <description>To simplify Payme Merchant API integration</description>
-    <url>https://github.com/nazarovctrl/payme</url>
+    <url>https://github.com/nazarovctrl/payme-merchant-api</url>
 
     <issueManagement>
-        <url>https://github.com/nazarovctrl/payme/issues</url>
+        <url>https://github.com/nazarovctrl/payme-merchant-api/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
 
     <scm>
-        <url>https://github.com/nazarovctrl/payme</url>
-        <connection>scm:git:git://github.com/nazarovctrl/payme.git</connection>
-        <developerConnection>scm:git:git@github.com:nazarovctrl/payme.git</developerConnection>
+        <url>https://github.com/nazarovctrl/payme-merchant-api</url>
+        <connection>scm:git:git://github.com/nazarovctrl/payme-merchant-api.git</connection>
+        <developerConnection>scm:git:git@github.com:nazarovctrl/payme-merchant-api.git</developerConnection>
     </scm>
 
     <developers>
