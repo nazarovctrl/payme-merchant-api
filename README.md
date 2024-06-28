@@ -4,7 +4,7 @@
 ## Library [link](https://central.sonatype.com/artifact/io.github.nazarovctrl/payme-merchant-api/1.0.1-beta) in Maven Central
 ## Maven dependency
 
-```
+```xml
 <dependency>
     <groupId>io.github.nazarovctrl</groupId>
     <artifactId>payme-merchant-api</artifactId>
@@ -12,27 +12,7 @@
 </dependency>
 ```
 ## Usage
-### [How to use library?](https://github.com/nazarovctrl/payme-merchant-api/blob/master/HOW2USE.md#how-to-use-library)
+#### [https://github.com/nazarovctrl/payme-merchant-api/how-to-use](https://github.com/nazarovctrl/payme-merchant-api/HOW2USE.md#how-to-use-library) (how to use library)
 
 ## Examples
-### Example for generating payment url
-```java
-import io.github.nazarovctrl.util.PaymentUtil;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-@Service
-public class OrderService {
-    @Autowired
-    private PaymentUtil paymentUtil;
-
-    public String getPaymentUrl() {
-        Long orderId = 1;
-        Long amount = 1000_00L; // Сумма платежа (в тийинах)
-        
-        String paymentUrl = paymentUtil.generatePaymentUrl(orderId, amount);
-        return paymentUrl;
-    }
-}
-```
+#### [https://github.com/nazarovctrl/payme-merchant-api/EXAMPLES.md](https://github.com/nazarovctrl/payme-merchant-api/blob/master/EXAMPLES.md)
