@@ -12,7 +12,7 @@
 </dependency>
 ```
 ## Usage
-### [How to use library?]()
+### [How to use library?](https://github.com/nazarovctrl/payme-merchant-api/blob/master/HOW2USE.md#how-to-use-library)
 
 ## Examples
 ### Example for generating payment url
