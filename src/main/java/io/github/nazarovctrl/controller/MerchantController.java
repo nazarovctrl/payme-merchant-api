@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Azimjon Nazarov
  */
 @RestController
-@RequestMapping("${payme.merchant-api.path}")
+@RequestMapping("${payme.merchant.api.path}")
 public class MerchantController {
     /***
      * {@link MerchantService} for processing requests
