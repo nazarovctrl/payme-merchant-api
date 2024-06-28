@@ -17,8 +17,10 @@
 #### 1.Add Payme authorization credentials and billing details to <tt><b>application.properties</b></tt>
 
 ```
+### Merchant ID or alias
+payme.merchant.id=
 ### Reqeust path of Merchant API
-payme.merchant-api.path=
+payme.merchant.api.path=
 
 ### Basic Authorization credentials 
 payme.user.name=
