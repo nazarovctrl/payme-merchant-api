@@ -1,5 +1,6 @@
 package io.github.nazarovctrl.paymemerchantapi.config;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
@@ -26,7 +27,7 @@ public class BillingDetail {
     /***
      * Количество товаров или услуг	(required, minimum = 1)
      */
-    private int count = 1;
+    private Integer count;
     /***
      * Код упаковки продукта (required)
      */
@@ -82,5 +83,24 @@ public class BillingDetail {
 
     public void setVatPercent(Integer vatPercent) {
         this.vatPercent = vatPercent;
+    }
+
+    @PostConstruct
+    public void validate() {
+        if (code == null || code.isBlank()) {
+            throw new IllegalStateException("Code cannot be null");
+        }
+        if (title == null || title.isBlank()) {
+            throw new IllegalStateException("Title cannot be null");
+        }
+        if (count != null && count < 1) {
+            throw new IllegalStateException("Count cannot be less than 1");
+        }
+        if (packageCode == null || packageCode.isBlank()) {
+            throw new IllegalStateException("Package code cannot be null");
+        }
+        if (vatPercent == null) {
+            throw new IllegalStateException("VAT percent cannot be null");
+        }
     }
 }
