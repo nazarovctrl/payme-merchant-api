@@ -1,7 +1,8 @@
 package io.github.nazarovctrl.paymemerchantapi.dto.result;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.nazarovctrl.paymemerchantapi.dto.reqeust.Account;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class GetStatementResult {
     private String id;

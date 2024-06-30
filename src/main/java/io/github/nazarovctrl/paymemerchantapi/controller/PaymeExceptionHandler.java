@@ -2,9 +2,8 @@ package io.github.nazarovctrl.paymemerchantapi.controller;
 
 import io.github.nazarovctrl.paymemerchantapi.dto.result.Error;
 import io.github.nazarovctrl.paymemerchantapi.dto.result.Result;
-import io.github.nazarovctrl.exp.*;
-
 import io.github.nazarovctrl.paymemerchantapi.exp.PaymeException;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
