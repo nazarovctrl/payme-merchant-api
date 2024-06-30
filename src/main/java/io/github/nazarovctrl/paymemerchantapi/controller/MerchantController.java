@@ -7,8 +7,6 @@ import io.github.nazarovctrl.paymemerchantapi.util.AuthUtil;
 import io.github.nazarovctrl.paymemerchantapi.service.MerchantService;
 
 import jakarta.servlet.http.HttpServletRequest;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +21,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("${payme.merchant.api.path}")
 public class MerchantController {
-    private final Logger log = LoggerFactory.getLogger(MerchantController.class);
     /***
      * {@link MerchantService} for processing requests
      */
@@ -40,7 +37,6 @@ public class MerchantController {
     public MerchantController(MerchantService merchantService, AuthUtil authUtil) {
         this.merchantService = merchantService;
         this.authUtil = authUtil;
-        log.info("Payme Merchant API started successfully");
     }
 
     /***
