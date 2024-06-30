@@ -6,7 +6,7 @@
 ```properties
 ### Merchant ID or alias
 payme.merchant.id=
-### Reqeust path of Merchant API
+### Request path of Merchant API
 payme.merchant.api.path=
 
 ### Basic Authorization credentials 
@@ -23,10 +23,11 @@ payme.billing.detail.vat-percent=
 ```
 
  #### 2.Implement IMerchantRepository
+
  ```java
-import io.github.nazarovctrl.dto.db.Order;
-import io.github.nazarovctrl.dto.db.Transaction;
-import io.github.nazarovctrl.repository.IMerchantRepository;
+import io.github.nazarovctrl.paymemerchantapi.dto.db.Order;
+import io.github.nazarovctrl.paymemerchantapi.dto.db.Transaction;
+import io.github.nazarovctrl.paymemerchantapi.repository.IMerchantRepository;
 
 import org.springframework.stereotype.Component;
 
@@ -72,8 +73,9 @@ public class MerchantRepository implements IMerchantRepository {
 ```
 
 #### 3.Implement IPaymentService
+
 ````java
-import io.github.nazarovctrl.service.IPaymentService;
+import io.github.nazarovctrl.paymemerchantapi.service.IPaymentService;
 
 import org.springframework.stereotype.Service;
 
