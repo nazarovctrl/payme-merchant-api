@@ -93,7 +93,9 @@ public class BillingDetail {
         if (title == null || title.isBlank()) {
             throw new IllegalStateException("Title cannot be null");
         }
-        if (count != null && count < 1) {
+        if (count == null) {
+            throw new IllegalStateException("Count cannot be null");
+        } else if (count < 1) {
             throw new IllegalStateException("Count cannot be less than 1");
         }
         if (packageCode == null || packageCode.isBlank()) {
