@@ -45,7 +45,7 @@ public class MerchantController {
      * @return if request authorized returns result of RPC method, otherwise returns Unauthorized request (code = -32504)
      */
     @PostMapping
-    public ResponseEntity<Result> handle(HttpServletRequest request, @RequestBody RequestForm requestForm) {
+    public ResponseEntity<Result> handle(HttpServletRequest request, @RequestBody(required = false) RequestForm requestForm) {
         if (authUtil.isUnauthorized(request.getHeader("Authorization"))) {
             throw new UnauthorizedRequest();
         }

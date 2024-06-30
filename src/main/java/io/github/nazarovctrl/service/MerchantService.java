@@ -39,7 +39,7 @@ public class MerchantService {
 
     public Result handle(RequestForm requestForm) {
         try {
-            if (!requestForm.isValid()) {
+            if (requestForm == null || !requestForm.isValid()) {
                 throw new RequiredFieldMissing();
             }
         } catch (IllegalArgumentException e) {
