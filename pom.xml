@@ -17,7 +17,7 @@
     <groupId>io.github.nazarovctrl</groupId>
     <artifactId>payme-merchant-api</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.2-beta</version>
+    <version>1.0.3-beta</version>
     <name>Payme Merchant API</name>
     <description>To simplify Payme Merchant API integration</description>
     <url>https://github.com/nazarovctrl/payme-merchant-api</url>
