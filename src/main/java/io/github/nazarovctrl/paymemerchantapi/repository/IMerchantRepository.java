@@ -32,7 +32,7 @@ public interface IMerchantRepository {
     /***
      * @param transaction Transaction to be saved
      */
-    void saveTransaction(Transaction transaction);
+    Transaction saveTransaction(Transaction transaction);
 
     /***
      * @param order Order to be saved

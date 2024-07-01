@@ -3,8 +3,6 @@ package io.github.nazarovctrl.paymemerchantapi.dto.db;
 import io.github.nazarovctrl.paymemerchantapi.enums.OrderCancelReason;
 import io.github.nazarovctrl.paymemerchantapi.enums.TransactionState;
 
-import java.util.Date;
-
 public class Transaction {
     private String id;
     private String paymeId;
@@ -16,11 +14,22 @@ public class Transaction {
     private TransactionState state;
     private Order order;
 
+    public Transaction(String id, String paymeId, long paymeTime, long createTime, long performTime, long cancelTime, OrderCancelReason reason, TransactionState state, Order order) {
+        this.id = id;
+        this.paymeId = paymeId;
+        this.paymeTime = paymeTime;
+        this.createTime = createTime;
+        this.performTime = performTime;
+        this.cancelTime = cancelTime;
+        this.reason = reason;
+        this.state = state;
+        this.order = order;
+    }
+
     public Transaction(String paymeId, long paymeTime, Long orderId) {
         this.paymeId = paymeId;
         this.paymeTime = paymeTime;
         this.order = new Order(orderId);
-        this.createTime = new Date().getTime();
     }
 
     public String getPaymeId() {
