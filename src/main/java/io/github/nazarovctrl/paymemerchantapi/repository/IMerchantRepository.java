@@ -35,9 +35,11 @@ public interface IMerchantRepository {
     Transaction saveTransaction(Transaction transaction);
 
     /***
-     * @param order Order to be saved
+     * Change order's isActive field value and save it
+     * @param orderId Order ID
+     * @param isActive isActive field of Order
      */
-    void saveOrder(Order order);
+    void changeIsActive(Long orderId, Boolean isActive);
 
     /***
      * @param from paymeTime

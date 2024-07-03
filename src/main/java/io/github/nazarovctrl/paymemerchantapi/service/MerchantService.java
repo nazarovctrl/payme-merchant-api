@@ -135,9 +135,7 @@ public class MerchantService {
             }
             paymentService.receive(performTransaction.getId());
 
-            Order order = merchantRepository.getOrderById(transaction.getOrder().getOrderId());
-            order.setActive(false);
-            merchantRepository.saveOrder(order);
+            merchantRepository.changeIsActive(transaction.getOrder().getOrderId(), false);
 
             transaction.setState(TransactionState.STATE_DONE);
             transaction.setPerformTime(new Date().getTime());
@@ -180,9 +178,11 @@ public class MerchantService {
                 transaction.getState().equals(TransactionState.STATE_POST_CANCELED)) {
             return new CancelTransactionResult(transaction.getId(), transaction.getCancelTime(), transaction.getState().getCode());
         }
+
         Order order = transaction.getOrder();
+
         if (transaction.getState().equals(TransactionState.STATE_IN_PROGRESS)) {
-            order.setActive(false);
+            merchantRepository.changeIsActive(order.getOrderId(), false);
             transaction.setState(TransactionState.STATE_CANCELED);
         } else if (transaction.getState().equals(TransactionState.STATE_DONE)) {
             if (!paymentService.canRefund(cancelTransaction.getId())) {
@@ -190,11 +190,9 @@ public class MerchantService {
             }
             paymentService.refund(cancelTransaction.getId());
 
-            order.setActive(false);
+            merchantRepository.changeIsActive(order.getOrderId(), false);
             transaction.setState(TransactionState.STATE_POST_CANCELED);
         }
-
-        merchantRepository.saveOrder(order);
 
         transaction.setCancelTime(new Date().getTime());
         transaction.setReason(OrderCancelReason.get(cancelTransaction.getReason()));
