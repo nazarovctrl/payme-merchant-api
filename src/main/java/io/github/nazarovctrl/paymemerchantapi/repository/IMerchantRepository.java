@@ -30,14 +30,18 @@ public interface IMerchantRepository {
     Transaction getTransactionByPaymeId(String id);
 
     /***
+     * Important! You need to set transaction id if transaction id is null
      * @param transaction Transaction to be saved
+     * @return Transaction ID
      */
-    Transaction saveTransaction(Transaction transaction);
+    String saveTransaction(Transaction transaction);
 
     /***
-     * @param order Order to be saved
+     * Change order's isActive field value and save it
+     * @param orderId Order ID
+     * @param isActive isActive field of Order
      */
-    void saveOrder(Order order);
+    void changeIsActive(Long orderId, Boolean isActive);
 
     /***
      * @param from paymeTime

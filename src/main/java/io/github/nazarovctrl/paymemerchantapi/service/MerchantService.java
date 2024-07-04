@@ -98,6 +98,7 @@ public class MerchantService {
             if (System.currentTimeMillis() - transaction.getPaymeTime() > time_expired) {
                 transaction.setReason(OrderCancelReason.TRANSACTION_TIMEOUT);
                 transaction.setState(TransactionState.STATE_CANCELED);
+                transaction.setCancelTime(new Date().getTime());
                 merchantRepository.saveTransaction(transaction);
                 throw new UnableToCompleteOperation();
             }
@@ -116,8 +117,9 @@ public class MerchantService {
 
         transaction = new Transaction(createTransaction.getId(), createTransaction.getTime(), createTransaction.getAccount().getOrderId());
         transaction.setState(TransactionState.STATE_IN_PROGRESS);
-        transaction = merchantRepository.saveTransaction(transaction);
-
+        transaction.setCreateTime(new Date().getTime());
+        String transactionId = merchantRepository.saveTransaction(transaction);
+        transaction.setId(transactionId);
         return MerchantMapper.getCreateTransactionResult(transaction);
     }
 
@@ -130,18 +132,17 @@ public class MerchantService {
         if (transaction.getState().equals(TransactionState.STATE_IN_PROGRESS)) {
             if (!(System.currentTimeMillis() - transaction.getPaymeTime() < time_expired)) {
                 transaction.setState(TransactionState.STATE_CANCELED);
+                transaction.setCancelTime(new Date().getTime());
                 merchantRepository.saveTransaction(transaction);
                 throw new UnableToCompleteOperation();
             }
             paymentService.receive(performTransaction.getId());
 
-            Order order = merchantRepository.getOrderById(transaction.getOrder().getOrderId());
-            order.setActive(false);
-            merchantRepository.saveOrder(order);
+            merchantRepository.changeIsActive(transaction.getOrder().getOrderId(), false);
 
             transaction.setState(TransactionState.STATE_DONE);
             transaction.setPerformTime(new Date().getTime());
-            transaction = merchantRepository.saveTransaction(transaction);
+            merchantRepository.saveTransaction(transaction);
 
             return new PerformTransactionResult(transaction.getId(), transaction.getPerformTime(), transaction.getState().getCode());
         }
@@ -180,9 +181,11 @@ public class MerchantService {
                 transaction.getState().equals(TransactionState.STATE_POST_CANCELED)) {
             return new CancelTransactionResult(transaction.getId(), transaction.getCancelTime(), transaction.getState().getCode());
         }
+
         Order order = transaction.getOrder();
+
         if (transaction.getState().equals(TransactionState.STATE_IN_PROGRESS)) {
-            order.setActive(false);
+            merchantRepository.changeIsActive(order.getOrderId(), false);
             transaction.setState(TransactionState.STATE_CANCELED);
         } else if (transaction.getState().equals(TransactionState.STATE_DONE)) {
             if (!paymentService.canRefund(cancelTransaction.getId())) {
@@ -190,15 +193,13 @@ public class MerchantService {
             }
             paymentService.refund(cancelTransaction.getId());
 
-            order.setActive(false);
+            merchantRepository.changeIsActive(order.getOrderId(), false);
             transaction.setState(TransactionState.STATE_POST_CANCELED);
         }
 
-        merchantRepository.saveOrder(order);
-
         transaction.setCancelTime(new Date().getTime());
         transaction.setReason(OrderCancelReason.get(cancelTransaction.getReason()));
-        transaction = merchantRepository.saveTransaction(transaction);
+        merchantRepository.saveTransaction(transaction);
 
         return new CancelTransactionResult(transaction.getId(), transaction.getCancelTime(), transaction.getState().getCode());
     }
