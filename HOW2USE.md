@@ -55,13 +55,13 @@ public class MerchantRepository implements IMerchantRepository {
     }
 
     @Override
-    public void saveTransaction(Transaction transaction) {
-        // write logic saving transaction
+    public String saveTransaction(Transaction transaction) {
+        // write logic saving transaction and return transactionId
     }
 
     @Override
-    public void saveOrder(Order order) {
-        // write logic saving order
+    public void changeIsActive(Long orderId, Boolean isActive);
+        // write logic to change the order field isActive
     }
 
     @Override
