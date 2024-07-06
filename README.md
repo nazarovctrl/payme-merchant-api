@@ -14,3 +14,10 @@
 
 ## Examples
 #### [https://github.com/nazarovctrl/payme-merchant-api/EXAMPLES.md](https://github.com/nazarovctrl/payme-merchant-api/blob/master/EXAMPLES.md)
+
+
+
+## Payme Merchant API documentation links:
+https://developer.help.paycom.uz/protokol-merchant-api/
+
+https://developer.help.paycom.uz/metody-merchant-api/
