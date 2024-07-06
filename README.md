@@ -1,7 +1,7 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.nazarovctrl/payme-merchant-api/badge.svg)](https://mvnrepository.com/artifact/io.github.nazarovctrl/payme-merchant-api)
 
 ## [Java documentation](https://javadoc.io/doc/io.github.nazarovctrl/payme-merchant-api/1.0.1)
-## Library [link](https://central.sonatype.com/artifact/io.github.nazarovctrl/payme-merchant-api/1.0.1-beta) in Maven Central
+## Library [link](https://central.sonatype.com/artifact/io.github.nazarovctrl/payme-merchant-api/1.0.1) in Maven Central
 ## Maven dependency
 
 ```xml
